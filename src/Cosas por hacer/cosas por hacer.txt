@@ -1,0 +1,54 @@
+
+Funciones ya incluidas 👇 
+.-----------------------------------------------------------------------------------------------------.
+
+Método que valida credenciales: Valida si el usuario y la contraseña ingresados coinciden con los almacenados en el sistema. Done
+
+Método que revisa si el usuario ya existe: Verifica si el nombre de usuario está registrado en el sistema. Done
+
+Método para registrar un nuevo usuario: Añade un nuevo usuario y contraseña al sistema. Done
+
+Método que verifica si existe una clave (usuario): Comprueba si una clave o usuario específico ya está registrado en el sistema. Done
+
+Método que verifica si el usuario es administrador: Determina si el usuario ingresado es un administrador del sistema, validando también sus credenciales. Done
+
+Añadir un nuevo libro: Método que añade un nuevo libro al sistema. Done
+
+Eliminar un libro existente: Por fila. Done
+
+Actualizar la información de un libro: Método que permite actualizar la información de un libro existente (nombre, autor, año, etc.). done
+
+
+.----------------------------------------------------------------------------------------------------------------------------------------.
+
+
+Funciones por añadir 👇 
+.-------------------------------------------------------------------------------------------------------------------------------.
+
+Buscar un libro por nombre o autor: Método que busca un libro en base al nombre o autor ingresado.
+
+Marcar un libro como prestado: Método que marca un libro como prestado si está disponible.
+
+Devolver un libro: Método que marca un libro como devuelto, indicando que ya no está prestado.
+
+Filtrar libros por género: Método que filtra y devuelve una lista de libros según el género especificado.
+
+Mostrar todos los libros: Método que lista todos los libros almacenados en el sistema.
+
+Guardar la lista de libros en un archivo (por ejemplo, en formato CSV o TXT): Método que guarda toda la información de los libros en un archivo de texto o CSV.
+
+Cargar la lista de libros desde un archivo: Método que carga la lista de libros desde un archivo previamente guardado (CSV o TXT).
+
+Contar el número total de libros: Método que retorna el número total de libros registrados en el sistema.
+
+Mostrar libros prestados y no prestados: Método que lista los libros que están prestados y los que no están prestados.
+
+Ordenar libros por año de publicación o autor: Método que ordena los libros por su año de publicación o por el autor, según la preferencia.
+
+Ver detalles de un libro seleccionado: Método que muestra todos los detalles de un libro específico (nombre, autor, año, etc.).
+
+Crear una interfaz de usuario para reportes (por ejemplo, libros más populares, estadísticas de préstamos, etc.): Método que genera reportes, como estadísticas sobre los libros más prestados o datos generales sobre los préstamos.
+
+.-------------------------------------------------------------------------------------------------------------------------------.
+
+
