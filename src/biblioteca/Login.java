@@ -221,8 +221,8 @@ public class Login extends javax.swing.JFrame {
 
             gestionContraseñas.registrar(id, pass);
             JOptionPane.showMessageDialog(null, "Registrado exitosamente", "Registro exitoso", JOptionPane.INFORMATION_MESSAGE);
-            Pagina_principal p = new Pagina_principal();
-            p.setVisible(true);
+            dashboard dash = new dashboard();
+            dash.setVisible(true);
             dispose();
 
         }
@@ -236,8 +236,8 @@ public class Login extends javax.swing.JFrame {
         String pass = Password_1.getText();
 
         if (gestionContraseñas.validarCredenciales(id, pass)) {
-            Pagina_principal p = new Pagina_principal();
-            p.setVisible(true);
+            dashboard dash = new dashboard();
+            dash.setVisible(true);
             dispose();
             if (gestionContraseñas.esAdmin(id, pass)) {
                 //nada aun

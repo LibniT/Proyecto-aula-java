@@ -6,6 +6,7 @@ package biblioteca;
 
 import java.awt.BorderLayout;
 import java.time.LocalDate;
+import vista.Prestamos;
 import vista.principal_vista;
 
 /**
@@ -82,6 +83,11 @@ public class dashboard extends javax.swing.JFrame {
         BtnPrincipal.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         BtnPrincipal.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         BtnPrincipal.setIconTextGap(10);
+        BtnPrincipal.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                BtnPrincipalMouseClicked(evt);
+            }
+        });
         BtnPrincipal.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 BtnPrincipalActionPerformed(evt);
@@ -157,6 +163,11 @@ public class dashboard extends javax.swing.JFrame {
         BtnPrestamos.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         BtnPrestamos.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         BtnPrestamos.setIconTextGap(10);
+        BtnPrestamos.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                BtnPrestamosMouseClicked(evt);
+            }
+        });
         BtnPrestamos.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 BtnPrestamosActionPerformed(evt);
@@ -182,17 +193,17 @@ public class dashboard extends javax.swing.JFrame {
             PnlMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(PnlMenuLayout.createSequentialGroup()
                 .addComponent(BtnPrincipal, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(BtnPrestamos, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(BtnDevoluciones, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(BtnUsers, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(BtnLibros, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(BtnReportes, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 188, Short.MAX_VALUE))
+                .addGap(0, 200, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
@@ -323,6 +334,28 @@ public class dashboard extends javax.swing.JFrame {
     private void BtnPrincipalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnPrincipalActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_BtnPrincipalActionPerformed
+
+    private void BtnPrincipalMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BtnPrincipalMouseClicked
+        //Abrir ventana de inicio
+        principal_vista pl = new principal_vista();
+        pl.setSize(758, 341);
+        pl.setLocation(0,0);
+        PnlContent.removeAll();
+        PnlContent.add(pl, BorderLayout.CENTER);
+        PnlContent.revalidate();
+        PnlContent.repaint();
+    }//GEN-LAST:event_BtnPrincipalMouseClicked
+
+    private void BtnPrestamosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BtnPrestamosMouseClicked
+        //Terrible 
+        Prestamos pr = new Prestamos();
+        pr.setSize(758, 341);
+        pr.setLocation(0,0);
+        PnlContent.removeAll();
+        PnlContent.add(pr, BorderLayout.CENTER);
+        PnlContent.revalidate();
+        PnlContent.repaint();
+    }//GEN-LAST:event_BtnPrestamosMouseClicked
 
     /**
      * @param args the command line arguments
