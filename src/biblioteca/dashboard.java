@@ -4,17 +4,41 @@
  */
 package biblioteca;
 
+import java.awt.BorderLayout;
+import java.time.LocalDate;
+import vista.principal_vista;
+
 /**
  *
  * @author Yudys
  */
 public class dashboard extends javax.swing.JFrame {
 
-    /**
-     * Creates new form dashboard
-     */
     public dashboard() {
         initComponents();
+        LocalDate now = LocalDate.now();
+        int year = now.getYear();
+        int dia = now.getDayOfMonth();
+        int month = now.getMonthValue();
+        String[] meses = {"Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"};
+
+        String fechaActual = "Hoy es " + dia + " de " + meses[month - 1] + " de " + year;
+        LblHora.setText(fechaActual);
+        
+        initCOntent();
+    }
+    
+    private void initCOntent()
+    {
+        principal_vista pl = new principal_vista();
+        pl.setSize(758, 341);
+        pl.setLocation(0,0);
+        PnlContent.removeAll();
+        PnlContent.add(pl, BorderLayout.CENTER);
+        PnlContent.revalidate();
+        PnlContent.repaint();
+                
+        
     }
 
     /**
@@ -39,6 +63,7 @@ public class dashboard extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         PnlContent = new javax.swing.JPanel();
         LblBiblioteca = new javax.swing.JLabel();
+        LblHora = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -194,14 +219,14 @@ public class dashboard extends javax.swing.JFrame {
             .addGroup(PnlHeaderLayout.createSequentialGroup()
                 .addGap(36, 36, 36)
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 321, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(413, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         PnlHeaderLayout.setVerticalGroup(
             PnlHeaderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(PnlHeaderLayout.createSequentialGroup()
                 .addGap(42, 42, 42)
                 .addComponent(jLabel1)
-                .addContainerGap(34, Short.MAX_VALUE))
+                .addContainerGap(51, Short.MAX_VALUE))
         );
 
         PnlContent.setBackground(new java.awt.Color(255, 255, 255));
@@ -221,6 +246,11 @@ public class dashboard extends javax.swing.JFrame {
         LblBiblioteca.setForeground(new java.awt.Color(0, 0, 0));
         LblBiblioteca.setText("Bilbioteca Libni Torres");
 
+        LblHora.setBackground(new java.awt.Color(0, 153, 51));
+        LblHora.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
+        LblHora.setForeground(new java.awt.Color(0, 0, 0));
+        LblHora.setText("Hoy es {daytime} {day} de {month} de {year}");
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -230,23 +260,28 @@ public class dashboard extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(PnlHeader, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(30, 30, 30)
-                        .addComponent(LblBiblioteca, javax.swing.GroupLayout.PREFERRED_SIZE, 252, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap())
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(PnlContent, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGap(30, 30, 30)
+                                .addComponent(LblBiblioteca, javax.swing.GroupLayout.PREFERRED_SIZE, 252, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 110, Short.MAX_VALUE)
+                                .addComponent(LblHora, javax.swing.GroupLayout.PREFERRED_SIZE, 372, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(PnlContent, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                         .addContainerGap())))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(28, 28, 28)
-                .addComponent(LblBiblioteca)
+                .addGap(40, 40, 40)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(LblBiblioteca)
+                    .addComponent(LblHora, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(PnlHeader, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(PnlContent, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
         );
@@ -332,6 +367,7 @@ public class dashboard extends javax.swing.JFrame {
     private javax.swing.JButton BtnReportes;
     private javax.swing.JButton BtnUsers;
     private javax.swing.JLabel LblBiblioteca;
+    private javax.swing.JLabel LblHora;
     private javax.swing.JPanel PnlContent;
     private javax.swing.JPanel PnlHeader;
     private javax.swing.JPanel PnlMenu;
