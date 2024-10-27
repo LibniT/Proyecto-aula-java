@@ -7,7 +7,11 @@ package biblioteca;
 import java.awt.BorderLayout;
 import java.time.LocalDate;
 import vista.Prestamos;
+import vista.devoluciones;
+import vista.libros;
 import vista.principal_vista;
+import vista.reportes;
+import vista.usuarios;
 
 /**
  *
@@ -67,8 +71,11 @@ public class dashboard extends javax.swing.JFrame {
         LblHora = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setMinimumSize(new java.awt.Dimension(1065, 678));
+        setResizable(false);
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel1.setMinimumSize(null);
 
         jPanel2.setBackground(new java.awt.Color(51, 255, 51));
 
@@ -103,6 +110,11 @@ public class dashboard extends javax.swing.JFrame {
         BtnDevoluciones.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         BtnDevoluciones.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         BtnDevoluciones.setIconTextGap(10);
+        BtnDevoluciones.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                BtnDevolucionesMouseClicked(evt);
+            }
+        });
         BtnDevoluciones.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 BtnDevolucionesActionPerformed(evt);
@@ -118,6 +130,11 @@ public class dashboard extends javax.swing.JFrame {
         BtnUsers.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         BtnUsers.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         BtnUsers.setIconTextGap(10);
+        BtnUsers.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                BtnUsersMouseClicked(evt);
+            }
+        });
         BtnUsers.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 BtnUsersActionPerformed(evt);
@@ -133,6 +150,11 @@ public class dashboard extends javax.swing.JFrame {
         BtnLibros.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         BtnLibros.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         BtnLibros.setIconTextGap(10);
+        BtnLibros.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                BtnLibrosMouseClicked(evt);
+            }
+        });
         BtnLibros.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 BtnLibrosActionPerformed(evt);
@@ -192,6 +214,7 @@ public class dashboard extends javax.swing.JFrame {
         PnlMenuLayout.setVerticalGroup(
             PnlMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(PnlMenuLayout.createSequentialGroup()
+                .addGap(113, 113, 113)
                 .addComponent(BtnPrincipal, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(BtnPrestamos, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -203,7 +226,7 @@ public class dashboard extends javax.swing.JFrame {
                 .addComponent(BtnLibros, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(BtnReportes, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 200, Short.MAX_VALUE))
+                .addContainerGap(175, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
@@ -275,7 +298,7 @@ public class dashboard extends javax.swing.JFrame {
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addGap(30, 30, 30)
                                 .addComponent(LblBiblioteca, javax.swing.GroupLayout.PREFERRED_SIZE, 252, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 110, Short.MAX_VALUE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 145, Short.MAX_VALUE)
                                 .addComponent(LblHora, javax.swing.GroupLayout.PREFERRED_SIZE, 372, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -338,7 +361,7 @@ public class dashboard extends javax.swing.JFrame {
     private void BtnPrincipalMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BtnPrincipalMouseClicked
         //Abrir ventana de inicio
         principal_vista pl = new principal_vista();
-        pl.setSize(758, 341);
+        pl.setSize(793, 429);
         pl.setLocation(0,0);
         PnlContent.removeAll();
         PnlContent.add(pl, BorderLayout.CENTER);
@@ -349,13 +372,43 @@ public class dashboard extends javax.swing.JFrame {
     private void BtnPrestamosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BtnPrestamosMouseClicked
         //Terrible 
         Prestamos pr = new Prestamos();
-        pr.setSize(758, 341);
+        pr.setSize(793, 429);
         pr.setLocation(0,0);
         PnlContent.removeAll();
         PnlContent.add(pr, BorderLayout.CENTER);
         PnlContent.revalidate();
         PnlContent.repaint();
     }//GEN-LAST:event_BtnPrestamosMouseClicked
+
+    private void BtnDevolucionesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BtnDevolucionesMouseClicked
+        devoluciones dev = new devoluciones();
+        dev.setSize(793, 429);
+        dev.setLocation(0, 0);
+        PnlContent.removeAll();
+        PnlContent.add(dev, BorderLayout.CENTER);
+        PnlContent.revalidate();
+        PnlContent.repaint();
+    }//GEN-LAST:event_BtnDevolucionesMouseClicked
+
+    private void BtnUsersMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BtnUsersMouseClicked
+        usuarios us = new usuarios();
+        us.setSize(793, 429);
+        us.setLocation(0, 0);
+        PnlContent.removeAll();
+        PnlContent.add(us, BorderLayout.CENTER);
+        PnlContent.revalidate();
+        PnlContent.repaint();
+    }//GEN-LAST:event_BtnUsersMouseClicked
+
+    private void BtnLibrosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BtnLibrosMouseClicked
+        libros lib = new libros();
+        lib.setSize(793, 429);
+        lib.setLocation(0,0);
+        PnlContent.removeAll();
+        PnlContent.add(lib, BorderLayout.CENTER);
+        PnlContent.revalidate();
+        PnlContent.repaint();
+    }//GEN-LAST:event_BtnLibrosMouseClicked
 
     /**
      * @param args the command line arguments

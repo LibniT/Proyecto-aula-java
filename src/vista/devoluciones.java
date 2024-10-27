@@ -8,12 +8,12 @@ package vista;
  *
  * @author Yudys
  */
-public class devolciones extends javax.swing.JPanel {
+public class devoluciones extends javax.swing.JPanel {
 
     /**
      * Creates new form devolciones
      */
-    public devolciones() {
+    public devoluciones() {
         initComponents();
     }
 
@@ -30,11 +30,11 @@ public class devolciones extends javax.swing.JPanel {
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGap(0, 793, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGap(0, 429, Short.MAX_VALUE)
         );
     }// </editor-fold>//GEN-END:initComponents
 

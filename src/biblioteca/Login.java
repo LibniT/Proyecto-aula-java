@@ -53,7 +53,6 @@ public class Login extends javax.swing.JFrame {
         setResizable(false);
 
         PnlBackGround.setBackground(new java.awt.Color(204, 255, 204));
-        PnlBackGround.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         BtnMusica.setBackground(new java.awt.Color(153, 255, 153));
         BtnMusica.setForeground(new java.awt.Color(102, 102, 102));
@@ -63,7 +62,6 @@ public class Login extends javax.swing.JFrame {
                 BtnMusicaMouseClicked(evt);
             }
         });
-        PnlBackGround.add(BtnMusica, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 460, -1, -1));
 
         PnlLogingBackground.setBackground(new java.awt.Color(153, 255, 153));
         PnlLogingBackground.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
@@ -158,10 +156,30 @@ public class Login extends javax.swing.JFrame {
         Separator_password.setForeground(new java.awt.Color(0, 0, 0));
         PnlLogingBackground.add(Separator_password, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 190, 250, 20));
 
-        PnlBackGround.add(PnlLogingBackground, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 50, 330, 340));
-
         Lbl_Libros_imagen.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/biblioteca.jpg"))); // NOI18N
-        PnlBackGround.add(Lbl_Libros_imagen, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 0, 220, 500));
+
+        javax.swing.GroupLayout PnlBackGroundLayout = new javax.swing.GroupLayout(PnlBackGround);
+        PnlBackGround.setLayout(PnlBackGroundLayout);
+        PnlBackGroundLayout.setHorizontalGroup(
+            PnlBackGroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(PnlBackGroundLayout.createSequentialGroup()
+                .addGap(10, 10, 10)
+                .addComponent(BtnMusica)
+                .addGap(114, 114, 114)
+                .addComponent(PnlLogingBackground, javax.swing.GroupLayout.PREFERRED_SIZE, 330, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(50, 50, 50)
+                .addComponent(Lbl_Libros_imagen, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE))
+        );
+        PnlBackGroundLayout.setVerticalGroup(
+            PnlBackGroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(PnlBackGroundLayout.createSequentialGroup()
+                .addGap(460, 460, 460)
+                .addComponent(BtnMusica))
+            .addGroup(PnlBackGroundLayout.createSequentialGroup()
+                .addGap(50, 50, 50)
+                .addComponent(PnlLogingBackground, javax.swing.GroupLayout.PREFERRED_SIZE, 340, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addComponent(Lbl_Libros_imagen)
+        );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);

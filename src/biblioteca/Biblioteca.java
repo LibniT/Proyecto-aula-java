@@ -2,7 +2,7 @@ package biblioteca;
 
 import java.util.ArrayList;
 
-public class Biblioteca {
+public class Biblioteca{
 
    private ArrayList<libro> libros = new ArrayList<>();
 
