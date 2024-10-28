@@ -79,7 +79,7 @@ public class principal_vista extends javax.swing.JPanel {
         LblWelcome1.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
         LblWelcome1.setForeground(new java.awt.Color(0, 0, 0));
         LblWelcome1.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        LblWelcome1.setText("¡Bienvenido a la Biblioteca LIBNI Aquí encontrarás una amplia colección de libros");
+        LblWelcome1.setText("¡Bienvenido a la Biblioteca Aquí encontrarás una amplia colección de libros");
         LblWelcome1.setVerticalAlignment(javax.swing.SwingConstants.TOP);
 
         javax.swing.GroupLayout PnlBackGroundLayout = new javax.swing.GroupLayout(PnlBackGround);

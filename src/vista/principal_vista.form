@@ -214,7 +214,7 @@
               <Color blue="0" green="0" red="0" type="rgb"/>
             </Property>
             <Property name="horizontalAlignment" type="int" value="2"/>
-            <Property name="text" type="java.lang.String" value="&#xa1;Bienvenido a la Biblioteca LIBNI Aqu&#xed; encontrar&#xe1;s una amplia colecci&#xf3;n de libros"/>
+            <Property name="text" type="java.lang.String" value="&#xa1;Bienvenido a la Biblioteca Aqu&#xed; encontrar&#xe1;s una amplia colecci&#xf3;n de libros"/>
             <Property name="verticalAlignment" type="int" value="1"/>
           </Properties>
         </Component>

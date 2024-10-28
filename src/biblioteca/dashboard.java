@@ -75,7 +75,7 @@ public class dashboard extends javax.swing.JFrame {
         setResizable(false);
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel1.setMinimumSize(null);
+        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel2.setBackground(new java.awt.Color(51, 255, 51));
 
@@ -102,7 +102,7 @@ public class dashboard extends javax.swing.JFrame {
         });
 
         BtnDevoluciones.setBackground(new java.awt.Color(0, 153, 51));
-        BtnDevoluciones.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/devolucion_real.png"))); // NOI18N
+        BtnDevoluciones.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/devolver.png"))); // NOI18N
         BtnDevoluciones.setText("Devoluciones");
         BtnDevoluciones.setToolTipText("");
         BtnDevoluciones.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 10, 1, 1, new java.awt.Color(0, 0, 0)));
@@ -206,9 +206,9 @@ public class dashboard extends javax.swing.JFrame {
                     .addComponent(BtnReportes, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(BtnPrincipal, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(BtnDevoluciones, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 248, Short.MAX_VALUE)
-                    .addComponent(BtnUsers, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 248, Short.MAX_VALUE)
-                    .addComponent(BtnLibros, javax.swing.GroupLayout.DEFAULT_SIZE, 248, Short.MAX_VALUE)
-                    .addComponent(BtnPrestamos, javax.swing.GroupLayout.DEFAULT_SIZE, 248, Short.MAX_VALUE))
+                    .addComponent(BtnUsers, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(BtnLibros, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(BtnPrestamos, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
         PnlMenuLayout.setVerticalGroup(
@@ -226,7 +226,7 @@ public class dashboard extends javax.swing.JFrame {
                 .addComponent(BtnLibros, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(BtnReportes, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(175, Short.MAX_VALUE))
+                .addContainerGap(179, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
@@ -239,6 +239,8 @@ public class dashboard extends javax.swing.JFrame {
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(PnlMenu, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
+
+        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         PnlHeader.setBackground(new java.awt.Color(51, 255, 51));
 
@@ -263,62 +265,33 @@ public class dashboard extends javax.swing.JFrame {
                 .addContainerGap(51, Short.MAX_VALUE))
         );
 
+        jPanel1.add(PnlHeader, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 96, 805, -1));
+
         PnlContent.setBackground(new java.awt.Color(255, 255, 255));
 
         javax.swing.GroupLayout PnlContentLayout = new javax.swing.GroupLayout(PnlContent);
         PnlContent.setLayout(PnlContentLayout);
         PnlContentLayout.setHorizontalGroup(
             PnlContentLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
+            .addGap(0, 810, Short.MAX_VALUE)
         );
         PnlContentLayout.setVerticalGroup(
             PnlContentLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 0, Short.MAX_VALUE)
         );
 
+        jPanel1.add(PnlContent, new org.netbeans.lib.awtextra.AbsoluteConstraints(259, 232, 810, 450));
+
         LblBiblioteca.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         LblBiblioteca.setForeground(new java.awt.Color(0, 0, 0));
-        LblBiblioteca.setText("Bilbioteca Libni Torres");
+        LblBiblioteca.setText("Bilbioteca");
+        jPanel1.add(LblBiblioteca, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 45, 252, -1));
 
         LblHora.setBackground(new java.awt.Color(0, 153, 51));
         LblHora.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
         LblHora.setForeground(new java.awt.Color(0, 0, 0));
         LblHora.setText("Hoy es {daytime} {day} de {month} de {year}");
-
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(PnlHeader, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(30, 30, 30)
-                                .addComponent(LblBiblioteca, javax.swing.GroupLayout.PREFERRED_SIZE, 252, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 145, Short.MAX_VALUE)
-                                .addComponent(LblHora, javax.swing.GroupLayout.PREFERRED_SIZE, 372, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(PnlContent, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                        .addContainerGap())))
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(40, 40, 40)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(LblBiblioteca)
-                    .addComponent(LblHora, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(PnlHeader, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(PnlContent, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
-        );
+        jPanel1.add(LblHora, new org.netbeans.lib.awtextra.AbsoluteConstraints(687, 40, 372, 50));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -361,7 +334,7 @@ public class dashboard extends javax.swing.JFrame {
     private void BtnPrincipalMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BtnPrincipalMouseClicked
         //Abrir ventana de inicio
         principal_vista pl = new principal_vista();
-        pl.setSize(793, 429);
+        pl.setSize(810, 450);
         pl.setLocation(0,0);
         PnlContent.removeAll();
         PnlContent.add(pl, BorderLayout.CENTER);
@@ -372,7 +345,7 @@ public class dashboard extends javax.swing.JFrame {
     private void BtnPrestamosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BtnPrestamosMouseClicked
         //Terrible 
         Prestamos pr = new Prestamos();
-        pr.setSize(793, 429);
+        pr.setSize(810, 450);
         pr.setLocation(0,0);
         PnlContent.removeAll();
         PnlContent.add(pr, BorderLayout.CENTER);
@@ -382,7 +355,7 @@ public class dashboard extends javax.swing.JFrame {
 
     private void BtnDevolucionesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BtnDevolucionesMouseClicked
         devoluciones dev = new devoluciones();
-        dev.setSize(793, 429);
+        dev.setSize(810, 450);
         dev.setLocation(0, 0);
         PnlContent.removeAll();
         PnlContent.add(dev, BorderLayout.CENTER);
@@ -392,7 +365,7 @@ public class dashboard extends javax.swing.JFrame {
 
     private void BtnUsersMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BtnUsersMouseClicked
         usuarios us = new usuarios();
-        us.setSize(793, 429);
+        us.setSize(810, 450);
         us.setLocation(0, 0);
         PnlContent.removeAll();
         PnlContent.add(us, BorderLayout.CENTER);
@@ -402,7 +375,7 @@ public class dashboard extends javax.swing.JFrame {
 
     private void BtnLibrosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BtnLibrosMouseClicked
         libros lib = new libros();
-        lib.setSize(793, 429);
+        lib.setSize(810, 450);
         lib.setLocation(0,0);
         PnlContent.removeAll();
         PnlContent.add(lib, BorderLayout.CENTER);
