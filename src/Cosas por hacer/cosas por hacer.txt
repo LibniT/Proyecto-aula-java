@@ -51,4 +51,8 @@ Crear una interfaz de usuario para reportes (por ejemplo, libros más populares,
 
 .-------------------------------------------------------------------------------------------------------------------------------.
 
+Falta 👇
 
+
+polimorfismo
+clases abstractatas
