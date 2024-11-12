@@ -1,0 +1,4 @@
+Stephen King,1986,Terror,2,It,false
+dan brown,2003,misterio,2,El código Da Vinci,false
+Akira Toriyama,1984,Manga,2,Dragon Ball,false
+Mario Vargas Llosa,1963,Novela,2,La ciudad y los perros,false

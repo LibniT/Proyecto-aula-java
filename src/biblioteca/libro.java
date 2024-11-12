@@ -1,19 +1,26 @@
 package biblioteca;
 
-public class libro {
-    private String name;
+public class libro extends item {
+
     private String author;
     private int year;
-    private int id;
     private String genre;
-    private boolean borrowed;
 
-    public String getName() {
-        return name;
+    public libro(String author, int year, String genre, int id, String titulo, Boolean prestado) {
+        super(id, titulo, prestado);
+        this.author = author;
+        this.year = year;
+        this.genre = genre;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    @Override
+    public void mostrarInfo() {
+        System.out.println("ID: " + this.getId());
+        System.out.println("Título: " + this.getTitulo());
+        System.out.println("Autor: " + this.author);
+        System.out.println("Año: " + this.year);
+        System.out.println("Género: " + this.genre);
+        System.out.println("Prestado: " + this.getPrestado());
     }
 
     public String getAuthor() {
@@ -32,14 +39,6 @@ public class libro {
         this.year = year;
     }
 
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
-
     public String getGenre() {
         return genre;
     }
@@ -47,37 +46,4 @@ public class libro {
     public void setGenre(String genre) {
         this.genre = genre;
     }
-
-    public boolean isBorrowed() {
-        return borrowed;
-    }
-
-    public void setBorrowed(boolean borrowed) {
-        this.borrowed = borrowed;
-    }
-
-    // Constructor de la clase Libro
-    public libro(String name, String author, int year, int id, String genre, boolean borrowed) {
-        this.name = name;
-        this.author = author;
-        this.year = year;
-        this.id = id;
-        this.genre = genre;
-        this.borrowed = borrowed;
-    }
-
-    @Override
-    public String toString() {
-        return "Libro{" +
-                "name='" + name + '\'' +
-                ", author='" + author + '\'' +
-                ", year=" + year +
-                ", id=" + id +
-                ", genre='" + genre + '\'' +
-                ", borrowed=" + borrowed +
-                '}';
-    }
-    
-    
-    
 }
