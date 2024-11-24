@@ -1,9 +1,9 @@
-package biblioteca;
+package modelo;
 
 public class persona {
-    private String nombre;
-    private String apellido;
-    private String cedula;
+    protected String nombre;
+    protected String apellido;
+    protected String cedula;
 
     public persona(String nombre, String apellido, String cedula) {
         this.nombre = nombre;

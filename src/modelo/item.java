@@ -1,5 +1,5 @@
 
-package biblioteca;
+package modelo;
 
 public abstract class item {
     protected int id;

@@ -1,8 +1,8 @@
-package biblioteca;
-
+package vista;
 
 import java.awt.Color;
 import javax.swing.JOptionPane;
+import modelo.*;
 
 
 public class Login extends javax.swing.JFrame {

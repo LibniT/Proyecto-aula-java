@@ -4,7 +4,7 @@
  */
 package controlador;
 
-import biblioteca.Login;
+import vista.Login;
 
 /**
  *

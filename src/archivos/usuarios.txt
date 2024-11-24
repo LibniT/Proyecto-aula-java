@@ -1,6 +1,5 @@
 admin,123,4321,user_admin,1234,casa admin
 Libni,libnielpro18#,1121530505,Torres,3234291012,mz 45 casa 1 bellavista
-Jahdiel,clave_jahdiel,1121536581,Torres,325518920,mz 45 casa 1 bellavista
 HECTOR,HECTOR_CLAVE,31321321,CARRILLO,321321312,vive debajo de un puente
 Carlos,carlitos2023,1122334455,Martínez,3115678901,Carrera 12 #34-56
 Ana,ana_bonita123,1123547689,López,3102345678,Av. Siempreviva #742

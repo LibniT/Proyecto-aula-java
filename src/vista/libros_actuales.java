@@ -5,8 +5,11 @@
 package vista;
 
 import java.util.*;
-import biblioteca.*;
+
 import javax.swing.table.DefaultTableModel;
+
+import modelo.*;
+
 import javax.swing.JOptionPane;
 
 /**

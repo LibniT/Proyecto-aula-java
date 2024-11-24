@@ -4,9 +4,10 @@
  */
 package vista;
 
-import biblioteca.libro;
 import java.time.LocalDate;
 import javax.swing.JOptionPane;
+
+import modelo.libro;
 
 /**
  *

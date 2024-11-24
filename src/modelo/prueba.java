@@ -1,5 +1,5 @@
 
-package biblioteca;
+package modelo;
 
 import javax.swing.JFrame;
 import vista.*;

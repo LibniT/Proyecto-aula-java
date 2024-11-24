@@ -5,7 +5,8 @@
 package vista;
 
 import javax.swing.JOptionPane;
-import biblioteca.*;
+
+import modelo.*;
 
 /**
  *

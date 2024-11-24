@@ -4,8 +4,9 @@
  */
 package vista;
 
-import biblioteca.libro;
 import javax.swing.JOptionPane;
+
+import modelo.libro;
 
 /**
  *

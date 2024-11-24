@@ -4,11 +4,10 @@
  */
 package vista;
 
-import biblioteca.dashboard;
-import biblioteca.usuario;
 import java.util.List;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
+import modelo.usuario;
 
 /**
  *

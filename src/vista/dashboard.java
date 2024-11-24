@@ -2,17 +2,15 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
-package biblioteca;
+package vista;
 
 import java.awt.BorderLayout;
 import java.time.LocalDate;
 import javax.swing.JPanel;
 import vista.Prestamos;
-import vista.REPORTES_ENTREGADOS;
 import vista.devoluciones;
 import vista.libros_actuales;
 import vista.principal_vista;
-import vista.reportes;
 import vista.reportes_principal;
 import vista.usuarios;
 
