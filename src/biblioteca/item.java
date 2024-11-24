@@ -1,9 +1,6 @@
 
 package biblioteca;
 
-import java.util.List;
-
-
 public abstract class item {
     protected int id;
     protected String titulo;
@@ -44,16 +41,9 @@ public abstract class item {
     
     
     public abstract void mostrarInfo();
-    
-    public void prestar()
-    {
-        
-    }
-    
-    public void devolver()
-    {
-        
-    }
+    public abstract boolean prestar(int id, String user);
+    public abstract boolean devolver(int id , String user);
+
     
     
 }

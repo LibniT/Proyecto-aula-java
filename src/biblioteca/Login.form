@@ -49,9 +49,7 @@
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" attributes="0">
-                  <EmptySpace min="10" pref="10" max="-2" attributes="0"/>
-                  <Component id="BtnMusica" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace min="114" pref="114" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="200" max="-2" attributes="0"/>
                   <Component id="PnlLogingBackground" min="-2" pref="330" max="-2" attributes="0"/>
                   <EmptySpace min="50" pref="50" max="-2" attributes="0"/>
                   <Component id="Lbl_Libros_imagen" min="-2" pref="220" max="-2" attributes="0"/>
@@ -61,10 +59,6 @@
         <DimensionLayout dim="1">
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" attributes="0">
-                  <EmptySpace min="460" pref="460" max="-2" attributes="0"/>
-                  <Component id="BtnMusica" min="-2" max="-2" attributes="0"/>
-              </Group>
-              <Group type="102" attributes="0">
                   <EmptySpace min="50" pref="50" max="-2" attributes="0"/>
                   <Component id="PnlLogingBackground" min="-2" pref="340" max="-2" attributes="0"/>
               </Group>
@@ -73,20 +67,6 @@
         </DimensionLayout>
       </Layout>
       <SubComponents>
-        <Component class="javax.swing.JButton" name="BtnMusica">
-          <Properties>
-            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="99" green="ff" red="99" type="rgb"/>
-            </Property>
-            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="66" green="66" red="66" type="rgb"/>
-            </Property>
-            <Property name="text" type="java.lang.String" value="musica"/>
-          </Properties>
-          <Events>
-            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="BtnMusicaMouseClicked"/>
-          </Events>
-        </Component>
         <Container class="javax.swing.JPanel" name="PnlLogingBackground">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
@@ -210,28 +190,7 @@
               </Events>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                  <AbsoluteConstraints x="40" y="260" width="-1" height="-1"/>
-                </Constraint>
-              </Constraints>
-            </Component>
-            <Component class="javax.swing.JButton" name="BtnRegistrarse">
-              <Properties>
-                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="0" green="99" red="0" type="rgb"/>
-                </Property>
-                <Property name="text" type="java.lang.String" value="Registrarse"/>
-                <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
-                  <Color id="Hand Cursor"/>
-                </Property>
-              </Properties>
-              <Events>
-                <EventHandler event="mouseEntered" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="BtnRegistrarseMouseEntered"/>
-                <EventHandler event="mouseExited" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="BtnRegistrarseMouseExited"/>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BtnRegistrarseActionPerformed"/>
-              </Events>
-              <Constraints>
-                <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                  <AbsoluteConstraints x="210" y="260" width="-1" height="-1"/>
+                  <AbsoluteConstraints x="110" y="250" width="100" height="50"/>
                 </Constraint>
               </Constraints>
             </Component>

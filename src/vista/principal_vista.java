@@ -120,7 +120,7 @@ public class principal_vista extends javax.swing.JPanel {
         );
         PnlBackGroundLayout.setVerticalGroup(
             PnlBackGroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 249, Short.MAX_VALUE)
+            .addGap(0, 444, Short.MAX_VALUE)
             .addGroup(PnlBackGroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(PnlBackGroundLayout.createSequentialGroup()
                     .addContainerGap()

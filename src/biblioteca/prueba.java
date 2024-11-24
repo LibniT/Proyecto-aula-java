@@ -1,26 +1,21 @@
+
 package biblioteca;
 
-import java.util.ArrayList;
+import javax.swing.JFrame;
+import vista.*;
+
 
 public class prueba {
     public static void main(String[] args) {
-        // Crear lista de libros
-        ArrayList<libro> listaLibros = new ArrayList<>();
+       
 
-        // Crear el gestor de biblioteca con la lista de libros
-        gestorBiblioteca gb = new gestorBiblioteca(listaLibros);
-
-        // Crear un libro
-        libro l2 = new libro("Mario Vargas Llosa", 1963, "Novela", 2, "La ciudad y los perros", false);
+        JFrame frame = new JFrame("Agregar Libro");
+        AGREGAR_LIBROS agregarLibroPanel = new AGREGAR_LIBROS(); // Assuming AgregarLibroPanel is your JPanel class
+        frame.setContentPane(agregarLibroPanel);
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.pack();
+        frame.setVisible(true);
 
         
-
-        // Agregar el libro al gestor
-        gb.agregarLibro(l2);
-
-        // Realizar acciones con el libro
-        gb.prestar(l2);
-        gb.devolver(l2);
     }
 }
-

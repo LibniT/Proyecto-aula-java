@@ -4,6 +4,9 @@
  */
 package vista;
 
+import biblioteca.libro;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author Yudys
@@ -17,6 +20,27 @@ public class devoluciones extends javax.swing.JPanel {
         initComponents();
     }
 
+    private void devolverLibro() {
+        try {
+            int idLibro = Integer.parseInt(TxtIDLIBRO.getText());
+            String nombreUsuario = TxtIDLIBRO1.getText();
+
+            libro libro = new libro();
+
+            if (libro.devolver(idLibro, nombreUsuario)) {
+                JOptionPane.showMessageDialog(this, "El libro se devolvió exitosamente.", "Éxito", JOptionPane.INFORMATION_MESSAGE);
+                // Limpiar los campos después de una devolución exitosa
+                TxtIDLIBRO.setText("");
+                TxtIDLIBRO1.setText("");
+            } else {
+                JOptionPane.showMessageDialog(this, "No se pudo devolver el libro. Verifique los datos.", "Error", JOptionPane.ERROR_MESSAGE);
+            }
+        } catch (NumberFormatException e) {
+            JOptionPane.showMessageDialog(this, "Error: El ID del libro debe ser un número válido.", "Error", JOptionPane.ERROR_MESSAGE);
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(this, "Error inesperado: " + e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
+        }
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -42,6 +66,11 @@ public class devoluciones extends javax.swing.JPanel {
 
         BtnDevolver.setBackground(new java.awt.Color(0, 153, 51));
         BtnDevolver.setText("Devolver");
+        BtnDevolver.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                BtnDevolverMouseClicked(evt);
+            }
+        });
         jPanel1.add(BtnDevolver, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 80, 180, 70));
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
@@ -50,9 +79,13 @@ public class devoluciones extends javax.swing.JPanel {
         jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 80, 90, 20));
 
         TxtIDLIBRO.setBackground(new java.awt.Color(255, 255, 255));
+        TxtIDLIBRO.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        TxtIDLIBRO.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jPanel1.add(TxtIDLIBRO, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 110, 150, -1));
 
         TxtIDLIBRO1.setBackground(new java.awt.Color(255, 255, 255));
+        TxtIDLIBRO1.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        TxtIDLIBRO1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jPanel1.add(TxtIDLIBRO1, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 110, 150, -1));
 
         jLabel2.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
@@ -71,6 +104,10 @@ public class devoluciones extends javax.swing.JPanel {
             .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
     }// </editor-fold>//GEN-END:initComponents
+
+    private void BtnDevolverMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BtnDevolverMouseClicked
+        devolverLibro();
+    }//GEN-LAST:event_BtnDevolverMouseClicked
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

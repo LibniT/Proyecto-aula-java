@@ -1,27 +1,16 @@
-
 package biblioteca;
 
-import java.applet.AudioClip;
+
 import java.awt.Color;
-import java.awt.Graphics;
-import java.awt.Image;
-import java.io.File;
-import javax.sound.sampled.AudioInputStream;
-import javax.sound.sampled.AudioSystem;
-import javax.sound.sampled.Clip;
-import javax.sound.sampled.FloatControl;
-import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
-import javax.swing.JPanel;
 
 
 public class Login extends javax.swing.JFrame {
 
-    int xMouse, yMouse;
 
     public Login() {
         initComponents();
-        //this.setContentPane(fondo);
+        setLocationRelativeTo(null);
     }
 
     /**
@@ -34,7 +23,6 @@ public class Login extends javax.swing.JFrame {
     private void initComponents() {
 
         PnlBackGround = new javax.swing.JPanel();
-        BtnMusica = new javax.swing.JButton();
         PnlLogingBackground = new javax.swing.JPanel();
         LblLogin = new javax.swing.JLabel();
         LblUsuario = new javax.swing.JLabel();
@@ -42,7 +30,6 @@ public class Login extends javax.swing.JFrame {
         LblPassword = new javax.swing.JLabel();
         Password_1 = new javax.swing.JPasswordField();
         BtnIngresar = new javax.swing.JButton();
-        BtnRegistrarse = new javax.swing.JButton();
         Separator_user = new javax.swing.JSeparator();
         Separator_password = new javax.swing.JSeparator();
         Lbl_Libros_imagen = new javax.swing.JLabel();
@@ -53,15 +40,6 @@ public class Login extends javax.swing.JFrame {
         setResizable(false);
 
         PnlBackGround.setBackground(new java.awt.Color(204, 255, 204));
-
-        BtnMusica.setBackground(new java.awt.Color(153, 255, 153));
-        BtnMusica.setForeground(new java.awt.Color(102, 102, 102));
-        BtnMusica.setText("musica");
-        BtnMusica.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                BtnMusicaMouseClicked(evt);
-            }
-        });
 
         PnlLogingBackground.setBackground(new java.awt.Color(153, 255, 153));
         PnlLogingBackground.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
@@ -130,25 +108,7 @@ public class Login extends javax.swing.JFrame {
                 BtnIngresarActionPerformed(evt);
             }
         });
-        PnlLogingBackground.add(BtnIngresar, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 260, -1, -1));
-
-        BtnRegistrarse.setBackground(new java.awt.Color(0, 153, 0));
-        BtnRegistrarse.setText("Registrarse");
-        BtnRegistrarse.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        BtnRegistrarse.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                BtnRegistrarseMouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                BtnRegistrarseMouseExited(evt);
-            }
-        });
-        BtnRegistrarse.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BtnRegistrarseActionPerformed(evt);
-            }
-        });
-        PnlLogingBackground.add(BtnRegistrarse, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 260, -1, -1));
+        PnlLogingBackground.add(BtnIngresar, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 250, 100, 50));
 
         Separator_user.setForeground(new java.awt.Color(0, 0, 0));
         PnlLogingBackground.add(Separator_user, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 123, 250, 10));
@@ -163,18 +123,13 @@ public class Login extends javax.swing.JFrame {
         PnlBackGroundLayout.setHorizontalGroup(
             PnlBackGroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(PnlBackGroundLayout.createSequentialGroup()
-                .addGap(10, 10, 10)
-                .addComponent(BtnMusica)
-                .addGap(114, 114, 114)
+                .addGap(200, 200, 200)
                 .addComponent(PnlLogingBackground, javax.swing.GroupLayout.PREFERRED_SIZE, 330, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(50, 50, 50)
                 .addComponent(Lbl_Libros_imagen, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         PnlBackGroundLayout.setVerticalGroup(
             PnlBackGroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(PnlBackGroundLayout.createSequentialGroup()
-                .addGap(460, 460, 460)
-                .addComponent(BtnMusica))
             .addGroup(PnlBackGroundLayout.createSequentialGroup()
                 .addGap(50, 50, 50)
                 .addComponent(PnlLogingBackground, javax.swing.GroupLayout.PREFERRED_SIZE, 340, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -195,81 +150,20 @@ public class Login extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void BtnMusicaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BtnMusicaMouseClicked
-        try {
-            // Cargar el archivo de audio
-            File file = new File("src/musica/paper-rings.wav");
-            AudioInputStream audioStream = AudioSystem.getAudioInputStream(file);
-            Clip clip = AudioSystem.getClip();
-            clip.open(audioStream);
-
-            // Obtener el control de volumen
-            FloatControl volumeControl = (FloatControl) clip.getControl(FloatControl.Type.MASTER_GAIN);
-
-            // Ajustar el volumen a un nivel bajo pero audible
-            float volume = -20.0f; // Valor entre -80.0f (silencio) y 6.0f (máximo)
-            volumeControl.setValue(volume);
-
-            // Reproducir el audio
-            clip.start();
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-    }//GEN-LAST:event_BtnMusicaMouseClicked
-
-    private void BtnRegistrarseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnRegistrarseActionPerformed
-        contraseñas gestionContraseñas = new contraseñas();
-
-        if (TxtUsuario.getText().equals("Nombre de usuario aquí") || Password_1.getText().equals("clavejaja")) {
-            JOptionPane.showMessageDialog(null, "Ingrese un nombre de usuario y contraseña correctos", "Error", JOptionPane.ERROR_MESSAGE);
-            return;
-        }
-
-        if (TxtUsuario.getText().isEmpty() || Password_1.getText().isEmpty()) {
-            JOptionPane.showMessageDialog(null, "Complete primero ambos campos", "Complete los campos", JOptionPane.WARNING_MESSAGE);
-        } else {
-            String id = TxtUsuario.getText();
-            String pass = Password_1.getText();
-
-            if (gestionContraseñas.existeClave(id)) {
-                JOptionPane.showMessageDialog(null, "Ya existe ese usuario, por favor ingrese uno diferente", "Usuario existente", JOptionPane.ERROR_MESSAGE);
-                TxtUsuario.setText("");
-                return;
-            }
-
-            gestionContraseñas.registrar(id, pass);
-            JOptionPane.showMessageDialog(null, "Registrado exitosamente", "Registro exitoso", JOptionPane.INFORMATION_MESSAGE);
-            dashboard dash = new dashboard();
-            dash.setVisible(true);
-            dispose();
-
-        }
-    }//GEN-LAST:event_BtnRegistrarseActionPerformed
-
     private void BtnIngresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnIngresarActionPerformed
+        String nombre = TxtUsuario.getText();
+        String contraseña = new String(Password_1.getPassword());
 
-        contraseñas gestionContraseñas = new contraseñas();
-
-        String id = TxtUsuario.getText();
-        String pass = Password_1.getText();
-
-        if (gestionContraseñas.validarCredenciales(id, pass)) {
+        if (usuario.validarUsuario(nombre, contraseña)) {
+            JOptionPane.showMessageDialog(null, "Bienvenido", "Ingreso exitoso", JOptionPane.INFORMATION_MESSAGE);
+            this.dispose();
             dashboard dash = new dashboard();
+            dash.pack();
             dash.setVisible(true);
-            dispose();
-            if (gestionContraseñas.esAdmin(id, pass)) {
-                //nada aun
-            }
         } else {
-            if (gestionContraseñas.usuario(id)) {
-                JOptionPane.showMessageDialog(null, "La contraseña es incorrecta", "Contraseña incorrecta", JOptionPane.INFORMATION_MESSAGE);
-                Password_1.setText("");
-            } else {
-                JOptionPane.showMessageDialog(null, "Usuario y contrasea incorrectos", "Incorrecto", JOptionPane.INFORMATION_MESSAGE);
-                TxtUsuario.setText("");
-                Password_1.setText("");
-            }
+            JOptionPane.showMessageDialog(null, "Usuario o contraseña incorrectos", "ERROR", JOptionPane.WARNING_MESSAGE);
         }
+
     }//GEN-LAST:event_BtnIngresarActionPerformed
 
     private void TxtUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TxtUsuarioActionPerformed
@@ -291,14 +185,6 @@ public class Login extends javax.swing.JFrame {
     private void BtnIngresarMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BtnIngresarMouseExited
         BtnIngresar.setBackground(new Color(0, 153, 0));
     }//GEN-LAST:event_BtnIngresarMouseExited
-
-    private void BtnRegistrarseMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BtnRegistrarseMouseEntered
-        BtnRegistrarse.setBackground(Color.green);
-    }//GEN-LAST:event_BtnRegistrarseMouseEntered
-
-    private void BtnRegistrarseMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BtnRegistrarseMouseExited
-        BtnRegistrarse.setBackground(new Color(0, 153, 0));
-    }//GEN-LAST:event_BtnRegistrarseMouseExited
 
     private void TxtUsuarioMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TxtUsuarioMousePressed
         TxtUsuario.setText("");
@@ -345,8 +231,6 @@ public class Login extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton BtnIngresar;
-    private javax.swing.JButton BtnMusica;
-    private javax.swing.JButton BtnRegistrarse;
     private javax.swing.JLabel LblLogin;
     private javax.swing.JLabel LblPassword;
     private javax.swing.JLabel LblUsuario;

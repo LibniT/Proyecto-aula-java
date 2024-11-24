@@ -6,11 +6,14 @@ package biblioteca;
 
 import java.awt.BorderLayout;
 import java.time.LocalDate;
+import javax.swing.JPanel;
 import vista.Prestamos;
+import vista.REPORTES_ENTREGADOS;
 import vista.devoluciones;
-import vista.libros;
+import vista.libros_actuales;
 import vista.principal_vista;
 import vista.reportes;
+import vista.reportes_principal;
 import vista.usuarios;
 
 /**
@@ -35,15 +38,21 @@ public class dashboard extends javax.swing.JFrame {
     
     private void initCOntent()
     {
-        principal_vista pl = new principal_vista();
-        pl.setSize(758, 341);
-        pl.setLocation(0,0);
-        PnlContent.removeAll();
-        PnlContent.add(pl, BorderLayout.CENTER);
-        PnlContent.revalidate();
-        PnlContent.repaint();
+        cambiarPanel(new principal_vista());
+        setLocationRelativeTo(null);
                 
         
+    }
+    
+    
+    public static void cambiarPanel(JPanel p)
+    {
+        p.setSize(812, 450);
+        p.setLocation(0,0);
+        PnlContent.removeAll();
+        PnlContent.add(p, BorderLayout.CENTER);
+        PnlContent.revalidate();
+        PnlContent.repaint();
     }
 
     /**
@@ -72,16 +81,15 @@ public class dashboard extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMinimumSize(new java.awt.Dimension(1065, 678));
-        setResizable(false);
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel2.setBackground(new java.awt.Color(51, 255, 51));
 
-        PnlMenu.setBackground(new java.awt.Color(0, 153, 51));
+        PnlMenu.setBackground(new java.awt.Color(204, 204, 204));
 
-        BtnPrincipal.setBackground(new java.awt.Color(0, 153, 51));
+        BtnPrincipal.setBackground(new java.awt.Color(51, 51, 255));
+        BtnPrincipal.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         BtnPrincipal.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/iniciOo.png"))); // NOI18N
         BtnPrincipal.setText("Principal");
         BtnPrincipal.setToolTipText("");
@@ -101,7 +109,8 @@ public class dashboard extends javax.swing.JFrame {
             }
         });
 
-        BtnDevoluciones.setBackground(new java.awt.Color(0, 153, 51));
+        BtnDevoluciones.setBackground(new java.awt.Color(51, 51, 255));
+        BtnDevoluciones.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         BtnDevoluciones.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/devolver.png"))); // NOI18N
         BtnDevoluciones.setText("Devoluciones");
         BtnDevoluciones.setToolTipText("");
@@ -121,7 +130,8 @@ public class dashboard extends javax.swing.JFrame {
             }
         });
 
-        BtnUsers.setBackground(new java.awt.Color(0, 153, 51));
+        BtnUsers.setBackground(new java.awt.Color(51, 51, 255));
+        BtnUsers.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         BtnUsers.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/usuarios.png"))); // NOI18N
         BtnUsers.setText("Usuarios");
         BtnUsers.setToolTipText("");
@@ -141,7 +151,8 @@ public class dashboard extends javax.swing.JFrame {
             }
         });
 
-        BtnLibros.setBackground(new java.awt.Color(0, 153, 51));
+        BtnLibros.setBackground(new java.awt.Color(51, 51, 255));
+        BtnLibros.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         BtnLibros.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/libros.png"))); // NOI18N
         BtnLibros.setText("Libros");
         BtnLibros.setToolTipText("");
@@ -161,7 +172,8 @@ public class dashboard extends javax.swing.JFrame {
             }
         });
 
-        BtnReportes.setBackground(new java.awt.Color(0, 153, 51));
+        BtnReportes.setBackground(new java.awt.Color(51, 51, 255));
+        BtnReportes.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         BtnReportes.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/reportes.png"))); // NOI18N
         BtnReportes.setText("Reportes");
         BtnReportes.setToolTipText("");
@@ -170,13 +182,19 @@ public class dashboard extends javax.swing.JFrame {
         BtnReportes.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         BtnReportes.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         BtnReportes.setIconTextGap(10);
+        BtnReportes.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                BtnReportesMouseClicked(evt);
+            }
+        });
         BtnReportes.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 BtnReportesActionPerformed(evt);
             }
         });
 
-        BtnPrestamos.setBackground(new java.awt.Color(0, 153, 51));
+        BtnPrestamos.setBackground(new java.awt.Color(51, 51, 255));
+        BtnPrestamos.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         BtnPrestamos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/prestamo.png"))); // NOI18N
         BtnPrestamos.setText("Prestamos");
         BtnPrestamos.setToolTipText("");
@@ -240,9 +258,7 @@ public class dashboard extends javax.swing.JFrame {
             .addComponent(PnlMenu, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
-        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
-
-        PnlHeader.setBackground(new java.awt.Color(51, 255, 51));
+        PnlHeader.setBackground(new java.awt.Color(204, 204, 204));
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 36)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(0, 0, 0));
@@ -265,33 +281,68 @@ public class dashboard extends javax.swing.JFrame {
                 .addContainerGap(51, Short.MAX_VALUE))
         );
 
-        jPanel1.add(PnlHeader, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 96, 805, -1));
-
         PnlContent.setBackground(new java.awt.Color(255, 255, 255));
 
         javax.swing.GroupLayout PnlContentLayout = new javax.swing.GroupLayout(PnlContent);
         PnlContent.setLayout(PnlContentLayout);
         PnlContentLayout.setHorizontalGroup(
             PnlContentLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 810, Short.MAX_VALUE)
+            .addGap(0, 0, Short.MAX_VALUE)
         );
         PnlContentLayout.setVerticalGroup(
             PnlContentLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 0, Short.MAX_VALUE)
         );
 
-        jPanel1.add(PnlContent, new org.netbeans.lib.awtextra.AbsoluteConstraints(259, 232, 810, 450));
-
         LblBiblioteca.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         LblBiblioteca.setForeground(new java.awt.Color(0, 0, 0));
         LblBiblioteca.setText("Bilbioteca");
-        jPanel1.add(LblBiblioteca, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 45, 252, -1));
 
         LblHora.setBackground(new java.awt.Color(0, 153, 51));
         LblHora.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
         LblHora.setForeground(new java.awt.Color(0, 0, 0));
         LblHora.setText("Hoy es {daytime} {day} de {month} de {year}");
-        jPanel1.add(LblHora, new org.netbeans.lib.awtextra.AbsoluteConstraints(687, 40, 372, 50));
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(290, 290, 290)
+                .addComponent(LblBiblioteca, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(145, 145, 145)
+                .addComponent(LblHora, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(10, 10, 10))
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(259, 259, 259)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(PnlHeader, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGap(7, 7, 7))
+                    .addComponent(PnlContent, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(811, Short.MAX_VALUE))
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(40, 40, 40)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(5, 5, 5)
+                        .addComponent(LblBiblioteca))
+                    .addComponent(LblHora, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(6, 6, 6)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(PnlHeader, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap())
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(136, 136, 136)
+                        .addComponent(PnlContent, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -333,55 +384,29 @@ public class dashboard extends javax.swing.JFrame {
 
     private void BtnPrincipalMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BtnPrincipalMouseClicked
         //Abrir ventana de inicio
-        principal_vista pl = new principal_vista();
-        pl.setSize(810, 450);
-        pl.setLocation(0,0);
-        PnlContent.removeAll();
-        PnlContent.add(pl, BorderLayout.CENTER);
-        PnlContent.revalidate();
-        PnlContent.repaint();
+        cambiarPanel(new principal_vista());
     }//GEN-LAST:event_BtnPrincipalMouseClicked
 
     private void BtnPrestamosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BtnPrestamosMouseClicked
-        //Terrible 
-        Prestamos pr = new Prestamos();
-        pr.setSize(810, 450);
-        pr.setLocation(0,0);
-        PnlContent.removeAll();
-        PnlContent.add(pr, BorderLayout.CENTER);
-        PnlContent.revalidate();
-        PnlContent.repaint();
+        cambiarPanel(new Prestamos());
     }//GEN-LAST:event_BtnPrestamosMouseClicked
 
     private void BtnDevolucionesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BtnDevolucionesMouseClicked
-        devoluciones dev = new devoluciones();
-        dev.setSize(810, 450);
-        dev.setLocation(0, 0);
-        PnlContent.removeAll();
-        PnlContent.add(dev, BorderLayout.CENTER);
-        PnlContent.revalidate();
-        PnlContent.repaint();
+        cambiarPanel(new devoluciones());
     }//GEN-LAST:event_BtnDevolucionesMouseClicked
 
     private void BtnUsersMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BtnUsersMouseClicked
-        usuarios us = new usuarios();
-        us.setSize(810, 450);
-        us.setLocation(0, 0);
-        PnlContent.removeAll();
-        PnlContent.add(us, BorderLayout.CENTER);
-        PnlContent.revalidate();
-        PnlContent.repaint();
+        cambiarPanel(new usuarios());
     }//GEN-LAST:event_BtnUsersMouseClicked
 
     private void BtnLibrosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BtnLibrosMouseClicked
-        libros lib = new libros();
-        lib.setSize(810, 450);
-        lib.setLocation(0,0);
-        PnlContent.removeAll();
-        PnlContent.add(lib, BorderLayout.CENTER);
-        PnlContent.revalidate();
-        PnlContent.repaint();
+        cambiarPanel(new libros_actuales());
     }//GEN-LAST:event_BtnLibrosMouseClicked
+
+    private void BtnReportesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BtnReportesMouseClicked
+        
+        cambiarPanel(new reportes_principal());    
+    }//GEN-LAST:event_BtnReportesMouseClicked
 
     /**
      * @param args the command line arguments
@@ -427,7 +452,7 @@ public class dashboard extends javax.swing.JFrame {
     private javax.swing.JButton BtnUsers;
     private javax.swing.JLabel LblBiblioteca;
     private javax.swing.JLabel LblHora;
-    private javax.swing.JPanel PnlContent;
+    private static javax.swing.JPanel PnlContent;
     private javax.swing.JPanel PnlHeader;
     private javax.swing.JPanel PnlMenu;
     private javax.swing.JLabel jLabel1;
