@@ -17,3 +17,4 @@ Valentina,valen_sol21,1132234455,Rivera,3189012345,Carrera 40 #50-51
 Cristian,cris_bien2023,1133345566,Castro,3212345678,Barrio El Porvenir
 Camila,camila_estrella,1134456677,Mendoza,3234567890,Calle Real #100
 Adna,clave_adna,1113336667,Castro,3332224423,en don alberto
+Kevin,clave_kevin,34243432432,Meza,3213213123,en la universidad

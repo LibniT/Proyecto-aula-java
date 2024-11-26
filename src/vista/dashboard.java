@@ -7,13 +7,6 @@ package vista;
 import java.awt.BorderLayout;
 import java.time.LocalDate;
 import javax.swing.JPanel;
-import vista.Prestamos;
-import vista.devoluciones;
-import vista.libros_actuales;
-import vista.principal_vista;
-import vista.reportes_principal;
-import vista.usuarios;
-
 /**
  *
  * @author Yudys
